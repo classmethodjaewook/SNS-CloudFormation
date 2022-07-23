@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description:
+  Create sns
+
+# ------------------------------------------------------------#
+#  Create sns Topic
+# ------------------------------------------------------------#
+Resources:
+  MySNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: my_sns_topic
+      Subscription:
+        - Endpoint: kim.jaewook@classmethod.jp
+          Protocol: email
+
+#-------------------------------------------------------------------
+#OutPut
+#-------------------------------------------------------------------
+Outputs:
+# SNS
+  SNS:
+    Value: !Ref MySNSTopic
+    Export:
+      Name: !Sub "my_sns_topic"
