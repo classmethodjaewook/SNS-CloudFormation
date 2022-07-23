@@ -22,4 +22,4 @@ Outputs:
   SNS:
     Value: !Ref MySNSTopic
     Export:
-      Name: !Sub "my_sns_topic"
+      Name: !Sub "my-sns-topic"
